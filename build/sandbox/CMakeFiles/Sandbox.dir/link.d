@@ -4,6 +4,9 @@ Sandbox: \
   /usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o \
   CMakeFiles/Sandbox.dir/main.cpp.o \
   ../engine/libGameEngine.a \
+  ../external/glfw/src/libglfw3.a \
+  /usr/lib64/librt.a \
+  /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/libdl.a \
   /usr/lib/gcc/x86_64-redhat-linux/15/libstdc++.so \
   /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/libm.so \
   /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/libm.so \
@@ -41,6 +44,12 @@ Sandbox: \
 CMakeFiles/Sandbox.dir/main.cpp.o:
 
 ../engine/libGameEngine.a:
+
+../external/glfw/src/libglfw3.a:
+
+/usr/lib64/librt.a:
+
+/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/libdl.a:
 
 /usr/lib/gcc/x86_64-redhat-linux/15/libstdc++.so:
 

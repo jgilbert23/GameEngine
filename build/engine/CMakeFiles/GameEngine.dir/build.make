@@ -114,11 +114,161 @@ engine/CMakeFiles/GameEngine.dir/src/Core/Log.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GameEngine.dir/src/Core/Log.cpp.s"
 	cd /home/jeffg/cpp_projects/GameEngine/build/engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jeffg/cpp_projects/GameEngine/engine/src/Core/Log.cpp -o CMakeFiles/GameEngine.dir/src/Core/Log.cpp.s
 
+engine/CMakeFiles/GameEngine.dir/src/Core/Timer.cpp.o: engine/CMakeFiles/GameEngine.dir/flags.make
+engine/CMakeFiles/GameEngine.dir/src/Core/Timer.cpp.o: /home/jeffg/cpp_projects/GameEngine/engine/src/Core/Timer.cpp
+engine/CMakeFiles/GameEngine.dir/src/Core/Timer.cpp.o: engine/CMakeFiles/GameEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jeffg/cpp_projects/GameEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object engine/CMakeFiles/GameEngine.dir/src/Core/Timer.cpp.o"
+	cd /home/jeffg/cpp_projects/GameEngine/build/engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT engine/CMakeFiles/GameEngine.dir/src/Core/Timer.cpp.o -MF CMakeFiles/GameEngine.dir/src/Core/Timer.cpp.o.d -o CMakeFiles/GameEngine.dir/src/Core/Timer.cpp.o -c /home/jeffg/cpp_projects/GameEngine/engine/src/Core/Timer.cpp
+
+engine/CMakeFiles/GameEngine.dir/src/Core/Timer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GameEngine.dir/src/Core/Timer.cpp.i"
+	cd /home/jeffg/cpp_projects/GameEngine/build/engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jeffg/cpp_projects/GameEngine/engine/src/Core/Timer.cpp > CMakeFiles/GameEngine.dir/src/Core/Timer.cpp.i
+
+engine/CMakeFiles/GameEngine.dir/src/Core/Timer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GameEngine.dir/src/Core/Timer.cpp.s"
+	cd /home/jeffg/cpp_projects/GameEngine/build/engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jeffg/cpp_projects/GameEngine/engine/src/Core/Timer.cpp -o CMakeFiles/GameEngine.dir/src/Core/Timer.cpp.s
+
+engine/CMakeFiles/GameEngine.dir/src/Core/Window.cpp.o: engine/CMakeFiles/GameEngine.dir/flags.make
+engine/CMakeFiles/GameEngine.dir/src/Core/Window.cpp.o: /home/jeffg/cpp_projects/GameEngine/engine/src/Core/Window.cpp
+engine/CMakeFiles/GameEngine.dir/src/Core/Window.cpp.o: engine/CMakeFiles/GameEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jeffg/cpp_projects/GameEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object engine/CMakeFiles/GameEngine.dir/src/Core/Window.cpp.o"
+	cd /home/jeffg/cpp_projects/GameEngine/build/engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT engine/CMakeFiles/GameEngine.dir/src/Core/Window.cpp.o -MF CMakeFiles/GameEngine.dir/src/Core/Window.cpp.o.d -o CMakeFiles/GameEngine.dir/src/Core/Window.cpp.o -c /home/jeffg/cpp_projects/GameEngine/engine/src/Core/Window.cpp
+
+engine/CMakeFiles/GameEngine.dir/src/Core/Window.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GameEngine.dir/src/Core/Window.cpp.i"
+	cd /home/jeffg/cpp_projects/GameEngine/build/engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jeffg/cpp_projects/GameEngine/engine/src/Core/Window.cpp > CMakeFiles/GameEngine.dir/src/Core/Window.cpp.i
+
+engine/CMakeFiles/GameEngine.dir/src/Core/Window.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GameEngine.dir/src/Core/Window.cpp.s"
+	cd /home/jeffg/cpp_projects/GameEngine/build/engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jeffg/cpp_projects/GameEngine/engine/src/Core/Window.cpp -o CMakeFiles/GameEngine.dir/src/Core/Window.cpp.s
+
+engine/CMakeFiles/GameEngine.dir/src/Core/Input.cpp.o: engine/CMakeFiles/GameEngine.dir/flags.make
+engine/CMakeFiles/GameEngine.dir/src/Core/Input.cpp.o: /home/jeffg/cpp_projects/GameEngine/engine/src/Core/Input.cpp
+engine/CMakeFiles/GameEngine.dir/src/Core/Input.cpp.o: engine/CMakeFiles/GameEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jeffg/cpp_projects/GameEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object engine/CMakeFiles/GameEngine.dir/src/Core/Input.cpp.o"
+	cd /home/jeffg/cpp_projects/GameEngine/build/engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT engine/CMakeFiles/GameEngine.dir/src/Core/Input.cpp.o -MF CMakeFiles/GameEngine.dir/src/Core/Input.cpp.o.d -o CMakeFiles/GameEngine.dir/src/Core/Input.cpp.o -c /home/jeffg/cpp_projects/GameEngine/engine/src/Core/Input.cpp
+
+engine/CMakeFiles/GameEngine.dir/src/Core/Input.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GameEngine.dir/src/Core/Input.cpp.i"
+	cd /home/jeffg/cpp_projects/GameEngine/build/engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jeffg/cpp_projects/GameEngine/engine/src/Core/Input.cpp > CMakeFiles/GameEngine.dir/src/Core/Input.cpp.i
+
+engine/CMakeFiles/GameEngine.dir/src/Core/Input.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GameEngine.dir/src/Core/Input.cpp.s"
+	cd /home/jeffg/cpp_projects/GameEngine/build/engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jeffg/cpp_projects/GameEngine/engine/src/Core/Input.cpp -o CMakeFiles/GameEngine.dir/src/Core/Input.cpp.s
+
+engine/CMakeFiles/GameEngine.dir/src/Renderer/RenderCommand.cpp.o: engine/CMakeFiles/GameEngine.dir/flags.make
+engine/CMakeFiles/GameEngine.dir/src/Renderer/RenderCommand.cpp.o: /home/jeffg/cpp_projects/GameEngine/engine/src/Renderer/RenderCommand.cpp
+engine/CMakeFiles/GameEngine.dir/src/Renderer/RenderCommand.cpp.o: engine/CMakeFiles/GameEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jeffg/cpp_projects/GameEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object engine/CMakeFiles/GameEngine.dir/src/Renderer/RenderCommand.cpp.o"
+	cd /home/jeffg/cpp_projects/GameEngine/build/engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT engine/CMakeFiles/GameEngine.dir/src/Renderer/RenderCommand.cpp.o -MF CMakeFiles/GameEngine.dir/src/Renderer/RenderCommand.cpp.o.d -o CMakeFiles/GameEngine.dir/src/Renderer/RenderCommand.cpp.o -c /home/jeffg/cpp_projects/GameEngine/engine/src/Renderer/RenderCommand.cpp
+
+engine/CMakeFiles/GameEngine.dir/src/Renderer/RenderCommand.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GameEngine.dir/src/Renderer/RenderCommand.cpp.i"
+	cd /home/jeffg/cpp_projects/GameEngine/build/engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jeffg/cpp_projects/GameEngine/engine/src/Renderer/RenderCommand.cpp > CMakeFiles/GameEngine.dir/src/Renderer/RenderCommand.cpp.i
+
+engine/CMakeFiles/GameEngine.dir/src/Renderer/RenderCommand.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GameEngine.dir/src/Renderer/RenderCommand.cpp.s"
+	cd /home/jeffg/cpp_projects/GameEngine/build/engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jeffg/cpp_projects/GameEngine/engine/src/Renderer/RenderCommand.cpp -o CMakeFiles/GameEngine.dir/src/Renderer/RenderCommand.cpp.s
+
+engine/CMakeFiles/GameEngine.dir/src/Renderer/Renderer2D.cpp.o: engine/CMakeFiles/GameEngine.dir/flags.make
+engine/CMakeFiles/GameEngine.dir/src/Renderer/Renderer2D.cpp.o: /home/jeffg/cpp_projects/GameEngine/engine/src/Renderer/Renderer2D.cpp
+engine/CMakeFiles/GameEngine.dir/src/Renderer/Renderer2D.cpp.o: engine/CMakeFiles/GameEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jeffg/cpp_projects/GameEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object engine/CMakeFiles/GameEngine.dir/src/Renderer/Renderer2D.cpp.o"
+	cd /home/jeffg/cpp_projects/GameEngine/build/engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT engine/CMakeFiles/GameEngine.dir/src/Renderer/Renderer2D.cpp.o -MF CMakeFiles/GameEngine.dir/src/Renderer/Renderer2D.cpp.o.d -o CMakeFiles/GameEngine.dir/src/Renderer/Renderer2D.cpp.o -c /home/jeffg/cpp_projects/GameEngine/engine/src/Renderer/Renderer2D.cpp
+
+engine/CMakeFiles/GameEngine.dir/src/Renderer/Renderer2D.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GameEngine.dir/src/Renderer/Renderer2D.cpp.i"
+	cd /home/jeffg/cpp_projects/GameEngine/build/engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jeffg/cpp_projects/GameEngine/engine/src/Renderer/Renderer2D.cpp > CMakeFiles/GameEngine.dir/src/Renderer/Renderer2D.cpp.i
+
+engine/CMakeFiles/GameEngine.dir/src/Renderer/Renderer2D.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GameEngine.dir/src/Renderer/Renderer2D.cpp.s"
+	cd /home/jeffg/cpp_projects/GameEngine/build/engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jeffg/cpp_projects/GameEngine/engine/src/Renderer/Renderer2D.cpp -o CMakeFiles/GameEngine.dir/src/Renderer/Renderer2D.cpp.s
+
+engine/CMakeFiles/GameEngine.dir/src/Renderer/Shader.cpp.o: engine/CMakeFiles/GameEngine.dir/flags.make
+engine/CMakeFiles/GameEngine.dir/src/Renderer/Shader.cpp.o: /home/jeffg/cpp_projects/GameEngine/engine/src/Renderer/Shader.cpp
+engine/CMakeFiles/GameEngine.dir/src/Renderer/Shader.cpp.o: engine/CMakeFiles/GameEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jeffg/cpp_projects/GameEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object engine/CMakeFiles/GameEngine.dir/src/Renderer/Shader.cpp.o"
+	cd /home/jeffg/cpp_projects/GameEngine/build/engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT engine/CMakeFiles/GameEngine.dir/src/Renderer/Shader.cpp.o -MF CMakeFiles/GameEngine.dir/src/Renderer/Shader.cpp.o.d -o CMakeFiles/GameEngine.dir/src/Renderer/Shader.cpp.o -c /home/jeffg/cpp_projects/GameEngine/engine/src/Renderer/Shader.cpp
+
+engine/CMakeFiles/GameEngine.dir/src/Renderer/Shader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GameEngine.dir/src/Renderer/Shader.cpp.i"
+	cd /home/jeffg/cpp_projects/GameEngine/build/engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jeffg/cpp_projects/GameEngine/engine/src/Renderer/Shader.cpp > CMakeFiles/GameEngine.dir/src/Renderer/Shader.cpp.i
+
+engine/CMakeFiles/GameEngine.dir/src/Renderer/Shader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GameEngine.dir/src/Renderer/Shader.cpp.s"
+	cd /home/jeffg/cpp_projects/GameEngine/build/engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jeffg/cpp_projects/GameEngine/engine/src/Renderer/Shader.cpp -o CMakeFiles/GameEngine.dir/src/Renderer/Shader.cpp.s
+
+engine/CMakeFiles/GameEngine.dir/src/Renderer/Texture2D.cpp.o: engine/CMakeFiles/GameEngine.dir/flags.make
+engine/CMakeFiles/GameEngine.dir/src/Renderer/Texture2D.cpp.o: /home/jeffg/cpp_projects/GameEngine/engine/src/Renderer/Texture2D.cpp
+engine/CMakeFiles/GameEngine.dir/src/Renderer/Texture2D.cpp.o: engine/CMakeFiles/GameEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jeffg/cpp_projects/GameEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object engine/CMakeFiles/GameEngine.dir/src/Renderer/Texture2D.cpp.o"
+	cd /home/jeffg/cpp_projects/GameEngine/build/engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT engine/CMakeFiles/GameEngine.dir/src/Renderer/Texture2D.cpp.o -MF CMakeFiles/GameEngine.dir/src/Renderer/Texture2D.cpp.o.d -o CMakeFiles/GameEngine.dir/src/Renderer/Texture2D.cpp.o -c /home/jeffg/cpp_projects/GameEngine/engine/src/Renderer/Texture2D.cpp
+
+engine/CMakeFiles/GameEngine.dir/src/Renderer/Texture2D.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GameEngine.dir/src/Renderer/Texture2D.cpp.i"
+	cd /home/jeffg/cpp_projects/GameEngine/build/engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jeffg/cpp_projects/GameEngine/engine/src/Renderer/Texture2D.cpp > CMakeFiles/GameEngine.dir/src/Renderer/Texture2D.cpp.i
+
+engine/CMakeFiles/GameEngine.dir/src/Renderer/Texture2D.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GameEngine.dir/src/Renderer/Texture2D.cpp.s"
+	cd /home/jeffg/cpp_projects/GameEngine/build/engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jeffg/cpp_projects/GameEngine/engine/src/Renderer/Texture2D.cpp -o CMakeFiles/GameEngine.dir/src/Renderer/Texture2D.cpp.s
+
+engine/CMakeFiles/GameEngine.dir/src/Renderer/OrthographicCamera.cpp.o: engine/CMakeFiles/GameEngine.dir/flags.make
+engine/CMakeFiles/GameEngine.dir/src/Renderer/OrthographicCamera.cpp.o: /home/jeffg/cpp_projects/GameEngine/engine/src/Renderer/OrthographicCamera.cpp
+engine/CMakeFiles/GameEngine.dir/src/Renderer/OrthographicCamera.cpp.o: engine/CMakeFiles/GameEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jeffg/cpp_projects/GameEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object engine/CMakeFiles/GameEngine.dir/src/Renderer/OrthographicCamera.cpp.o"
+	cd /home/jeffg/cpp_projects/GameEngine/build/engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT engine/CMakeFiles/GameEngine.dir/src/Renderer/OrthographicCamera.cpp.o -MF CMakeFiles/GameEngine.dir/src/Renderer/OrthographicCamera.cpp.o.d -o CMakeFiles/GameEngine.dir/src/Renderer/OrthographicCamera.cpp.o -c /home/jeffg/cpp_projects/GameEngine/engine/src/Renderer/OrthographicCamera.cpp
+
+engine/CMakeFiles/GameEngine.dir/src/Renderer/OrthographicCamera.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GameEngine.dir/src/Renderer/OrthographicCamera.cpp.i"
+	cd /home/jeffg/cpp_projects/GameEngine/build/engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jeffg/cpp_projects/GameEngine/engine/src/Renderer/OrthographicCamera.cpp > CMakeFiles/GameEngine.dir/src/Renderer/OrthographicCamera.cpp.i
+
+engine/CMakeFiles/GameEngine.dir/src/Renderer/OrthographicCamera.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GameEngine.dir/src/Renderer/OrthographicCamera.cpp.s"
+	cd /home/jeffg/cpp_projects/GameEngine/build/engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jeffg/cpp_projects/GameEngine/engine/src/Renderer/OrthographicCamera.cpp -o CMakeFiles/GameEngine.dir/src/Renderer/OrthographicCamera.cpp.s
+
+engine/CMakeFiles/GameEngine.dir/src/Renderer/Framebuffer.cpp.o: engine/CMakeFiles/GameEngine.dir/flags.make
+engine/CMakeFiles/GameEngine.dir/src/Renderer/Framebuffer.cpp.o: /home/jeffg/cpp_projects/GameEngine/engine/src/Renderer/Framebuffer.cpp
+engine/CMakeFiles/GameEngine.dir/src/Renderer/Framebuffer.cpp.o: engine/CMakeFiles/GameEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jeffg/cpp_projects/GameEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object engine/CMakeFiles/GameEngine.dir/src/Renderer/Framebuffer.cpp.o"
+	cd /home/jeffg/cpp_projects/GameEngine/build/engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT engine/CMakeFiles/GameEngine.dir/src/Renderer/Framebuffer.cpp.o -MF CMakeFiles/GameEngine.dir/src/Renderer/Framebuffer.cpp.o.d -o CMakeFiles/GameEngine.dir/src/Renderer/Framebuffer.cpp.o -c /home/jeffg/cpp_projects/GameEngine/engine/src/Renderer/Framebuffer.cpp
+
+engine/CMakeFiles/GameEngine.dir/src/Renderer/Framebuffer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GameEngine.dir/src/Renderer/Framebuffer.cpp.i"
+	cd /home/jeffg/cpp_projects/GameEngine/build/engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jeffg/cpp_projects/GameEngine/engine/src/Renderer/Framebuffer.cpp > CMakeFiles/GameEngine.dir/src/Renderer/Framebuffer.cpp.i
+
+engine/CMakeFiles/GameEngine.dir/src/Renderer/Framebuffer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GameEngine.dir/src/Renderer/Framebuffer.cpp.s"
+	cd /home/jeffg/cpp_projects/GameEngine/build/engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jeffg/cpp_projects/GameEngine/engine/src/Renderer/Framebuffer.cpp -o CMakeFiles/GameEngine.dir/src/Renderer/Framebuffer.cpp.s
+
+engine/CMakeFiles/GameEngine.dir/__/external/glad/src/glad.c.o: engine/CMakeFiles/GameEngine.dir/flags.make
+engine/CMakeFiles/GameEngine.dir/__/external/glad/src/glad.c.o: /home/jeffg/cpp_projects/GameEngine/external/glad/src/glad.c
+engine/CMakeFiles/GameEngine.dir/__/external/glad/src/glad.c.o: engine/CMakeFiles/GameEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jeffg/cpp_projects/GameEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object engine/CMakeFiles/GameEngine.dir/__/external/glad/src/glad.c.o"
+	cd /home/jeffg/cpp_projects/GameEngine/build/engine && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT engine/CMakeFiles/GameEngine.dir/__/external/glad/src/glad.c.o -MF CMakeFiles/GameEngine.dir/__/external/glad/src/glad.c.o.d -o CMakeFiles/GameEngine.dir/__/external/glad/src/glad.c.o -c /home/jeffg/cpp_projects/GameEngine/external/glad/src/glad.c
+
+engine/CMakeFiles/GameEngine.dir/__/external/glad/src/glad.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/GameEngine.dir/__/external/glad/src/glad.c.i"
+	cd /home/jeffg/cpp_projects/GameEngine/build/engine && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jeffg/cpp_projects/GameEngine/external/glad/src/glad.c > CMakeFiles/GameEngine.dir/__/external/glad/src/glad.c.i
+
+engine/CMakeFiles/GameEngine.dir/__/external/glad/src/glad.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/GameEngine.dir/__/external/glad/src/glad.c.s"
+	cd /home/jeffg/cpp_projects/GameEngine/build/engine && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jeffg/cpp_projects/GameEngine/external/glad/src/glad.c -o CMakeFiles/GameEngine.dir/__/external/glad/src/glad.c.s
+
 # Object files for target GameEngine
 GameEngine_OBJECTS = \
 "CMakeFiles/GameEngine.dir/src/Core/Application.cpp.o" \
 "CMakeFiles/GameEngine.dir/src/Core/FileSystem.cpp.o" \
-"CMakeFiles/GameEngine.dir/src/Core/Log.cpp.o"
+"CMakeFiles/GameEngine.dir/src/Core/Log.cpp.o" \
+"CMakeFiles/GameEngine.dir/src/Core/Timer.cpp.o" \
+"CMakeFiles/GameEngine.dir/src/Core/Window.cpp.o" \
+"CMakeFiles/GameEngine.dir/src/Core/Input.cpp.o" \
+"CMakeFiles/GameEngine.dir/src/Renderer/RenderCommand.cpp.o" \
+"CMakeFiles/GameEngine.dir/src/Renderer/Renderer2D.cpp.o" \
+"CMakeFiles/GameEngine.dir/src/Renderer/Shader.cpp.o" \
+"CMakeFiles/GameEngine.dir/src/Renderer/Texture2D.cpp.o" \
+"CMakeFiles/GameEngine.dir/src/Renderer/OrthographicCamera.cpp.o" \
+"CMakeFiles/GameEngine.dir/src/Renderer/Framebuffer.cpp.o" \
+"CMakeFiles/GameEngine.dir/__/external/glad/src/glad.c.o"
 
 # External object files for target GameEngine
 GameEngine_EXTERNAL_OBJECTS =
@@ -126,9 +276,19 @@ GameEngine_EXTERNAL_OBJECTS =
 engine/libGameEngine.a: engine/CMakeFiles/GameEngine.dir/src/Core/Application.cpp.o
 engine/libGameEngine.a: engine/CMakeFiles/GameEngine.dir/src/Core/FileSystem.cpp.o
 engine/libGameEngine.a: engine/CMakeFiles/GameEngine.dir/src/Core/Log.cpp.o
+engine/libGameEngine.a: engine/CMakeFiles/GameEngine.dir/src/Core/Timer.cpp.o
+engine/libGameEngine.a: engine/CMakeFiles/GameEngine.dir/src/Core/Window.cpp.o
+engine/libGameEngine.a: engine/CMakeFiles/GameEngine.dir/src/Core/Input.cpp.o
+engine/libGameEngine.a: engine/CMakeFiles/GameEngine.dir/src/Renderer/RenderCommand.cpp.o
+engine/libGameEngine.a: engine/CMakeFiles/GameEngine.dir/src/Renderer/Renderer2D.cpp.o
+engine/libGameEngine.a: engine/CMakeFiles/GameEngine.dir/src/Renderer/Shader.cpp.o
+engine/libGameEngine.a: engine/CMakeFiles/GameEngine.dir/src/Renderer/Texture2D.cpp.o
+engine/libGameEngine.a: engine/CMakeFiles/GameEngine.dir/src/Renderer/OrthographicCamera.cpp.o
+engine/libGameEngine.a: engine/CMakeFiles/GameEngine.dir/src/Renderer/Framebuffer.cpp.o
+engine/libGameEngine.a: engine/CMakeFiles/GameEngine.dir/__/external/glad/src/glad.c.o
 engine/libGameEngine.a: engine/CMakeFiles/GameEngine.dir/build.make
 engine/libGameEngine.a: engine/CMakeFiles/GameEngine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/jeffg/cpp_projects/GameEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libGameEngine.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/jeffg/cpp_projects/GameEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX static library libGameEngine.a"
 	cd /home/jeffg/cpp_projects/GameEngine/build/engine && $(CMAKE_COMMAND) -P CMakeFiles/GameEngine.dir/cmake_clean_target.cmake
 	cd /home/jeffg/cpp_projects/GameEngine/build/engine && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/GameEngine.dir/link.txt --verbose=$(VERBOSE)
 

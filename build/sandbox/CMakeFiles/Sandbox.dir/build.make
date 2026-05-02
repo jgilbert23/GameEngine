@@ -97,6 +97,9 @@ sandbox/Sandbox: sandbox/CMakeFiles/Sandbox.dir/main.cpp.o
 sandbox/Sandbox: sandbox/CMakeFiles/Sandbox.dir/build.make
 sandbox/Sandbox: sandbox/CMakeFiles/Sandbox.dir/compiler_depend.ts
 sandbox/Sandbox: engine/libGameEngine.a
+sandbox/Sandbox: external/glfw/src/libglfw3.a
+sandbox/Sandbox: /usr/lib64/librt.a
+sandbox/Sandbox: /usr/lib64/libm.so
 sandbox/Sandbox: sandbox/CMakeFiles/Sandbox.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/jeffg/cpp_projects/GameEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Sandbox"
 	cd /home/jeffg/cpp_projects/GameEngine/build/sandbox && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Sandbox.dir/link.txt --verbose=$(VERBOSE)

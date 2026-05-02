@@ -85,6 +85,51 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
 	cd /home/jeffg/cpp_projects/GameEngine/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/jeffg/cpp_projects/GameEngine/build/CMakeFiles /home/jeffg/cpp_projects/GameEngine/build/engine//CMakeFiles/progress.marks
@@ -129,6 +174,30 @@ GameEngine: engine/CMakeFiles/GameEngine.dir/rule
 GameEngine/fast:
 	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/build
 .PHONY : GameEngine/fast
+
+__/external/glad/src/glad.o: __/external/glad/src/glad.c.o
+.PHONY : __/external/glad/src/glad.o
+
+# target to build an object file
+__/external/glad/src/glad.c.o:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/__/external/glad/src/glad.c.o
+.PHONY : __/external/glad/src/glad.c.o
+
+__/external/glad/src/glad.i: __/external/glad/src/glad.c.i
+.PHONY : __/external/glad/src/glad.i
+
+# target to preprocess a source file
+__/external/glad/src/glad.c.i:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/__/external/glad/src/glad.c.i
+.PHONY : __/external/glad/src/glad.c.i
+
+__/external/glad/src/glad.s: __/external/glad/src/glad.c.s
+.PHONY : __/external/glad/src/glad.s
+
+# target to generate assembly for a file
+__/external/glad/src/glad.c.s:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/__/external/glad/src/glad.c.s
+.PHONY : __/external/glad/src/glad.c.s
 
 src/Core/Application.o: src/Core/Application.cpp.o
 .PHONY : src/Core/Application.o
@@ -178,6 +247,30 @@ src/Core/FileSystem.cpp.s:
 	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Core/FileSystem.cpp.s
 .PHONY : src/Core/FileSystem.cpp.s
 
+src/Core/Input.o: src/Core/Input.cpp.o
+.PHONY : src/Core/Input.o
+
+# target to build an object file
+src/Core/Input.cpp.o:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Core/Input.cpp.o
+.PHONY : src/Core/Input.cpp.o
+
+src/Core/Input.i: src/Core/Input.cpp.i
+.PHONY : src/Core/Input.i
+
+# target to preprocess a source file
+src/Core/Input.cpp.i:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Core/Input.cpp.i
+.PHONY : src/Core/Input.cpp.i
+
+src/Core/Input.s: src/Core/Input.cpp.s
+.PHONY : src/Core/Input.s
+
+# target to generate assembly for a file
+src/Core/Input.cpp.s:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Core/Input.cpp.s
+.PHONY : src/Core/Input.cpp.s
+
 src/Core/Log.o: src/Core/Log.cpp.o
 .PHONY : src/Core/Log.o
 
@@ -202,6 +295,198 @@ src/Core/Log.cpp.s:
 	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Core/Log.cpp.s
 .PHONY : src/Core/Log.cpp.s
 
+src/Core/Timer.o: src/Core/Timer.cpp.o
+.PHONY : src/Core/Timer.o
+
+# target to build an object file
+src/Core/Timer.cpp.o:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Core/Timer.cpp.o
+.PHONY : src/Core/Timer.cpp.o
+
+src/Core/Timer.i: src/Core/Timer.cpp.i
+.PHONY : src/Core/Timer.i
+
+# target to preprocess a source file
+src/Core/Timer.cpp.i:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Core/Timer.cpp.i
+.PHONY : src/Core/Timer.cpp.i
+
+src/Core/Timer.s: src/Core/Timer.cpp.s
+.PHONY : src/Core/Timer.s
+
+# target to generate assembly for a file
+src/Core/Timer.cpp.s:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Core/Timer.cpp.s
+.PHONY : src/Core/Timer.cpp.s
+
+src/Core/Window.o: src/Core/Window.cpp.o
+.PHONY : src/Core/Window.o
+
+# target to build an object file
+src/Core/Window.cpp.o:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Core/Window.cpp.o
+.PHONY : src/Core/Window.cpp.o
+
+src/Core/Window.i: src/Core/Window.cpp.i
+.PHONY : src/Core/Window.i
+
+# target to preprocess a source file
+src/Core/Window.cpp.i:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Core/Window.cpp.i
+.PHONY : src/Core/Window.cpp.i
+
+src/Core/Window.s: src/Core/Window.cpp.s
+.PHONY : src/Core/Window.s
+
+# target to generate assembly for a file
+src/Core/Window.cpp.s:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Core/Window.cpp.s
+.PHONY : src/Core/Window.cpp.s
+
+src/Renderer/Framebuffer.o: src/Renderer/Framebuffer.cpp.o
+.PHONY : src/Renderer/Framebuffer.o
+
+# target to build an object file
+src/Renderer/Framebuffer.cpp.o:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Renderer/Framebuffer.cpp.o
+.PHONY : src/Renderer/Framebuffer.cpp.o
+
+src/Renderer/Framebuffer.i: src/Renderer/Framebuffer.cpp.i
+.PHONY : src/Renderer/Framebuffer.i
+
+# target to preprocess a source file
+src/Renderer/Framebuffer.cpp.i:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Renderer/Framebuffer.cpp.i
+.PHONY : src/Renderer/Framebuffer.cpp.i
+
+src/Renderer/Framebuffer.s: src/Renderer/Framebuffer.cpp.s
+.PHONY : src/Renderer/Framebuffer.s
+
+# target to generate assembly for a file
+src/Renderer/Framebuffer.cpp.s:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Renderer/Framebuffer.cpp.s
+.PHONY : src/Renderer/Framebuffer.cpp.s
+
+src/Renderer/OrthographicCamera.o: src/Renderer/OrthographicCamera.cpp.o
+.PHONY : src/Renderer/OrthographicCamera.o
+
+# target to build an object file
+src/Renderer/OrthographicCamera.cpp.o:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Renderer/OrthographicCamera.cpp.o
+.PHONY : src/Renderer/OrthographicCamera.cpp.o
+
+src/Renderer/OrthographicCamera.i: src/Renderer/OrthographicCamera.cpp.i
+.PHONY : src/Renderer/OrthographicCamera.i
+
+# target to preprocess a source file
+src/Renderer/OrthographicCamera.cpp.i:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Renderer/OrthographicCamera.cpp.i
+.PHONY : src/Renderer/OrthographicCamera.cpp.i
+
+src/Renderer/OrthographicCamera.s: src/Renderer/OrthographicCamera.cpp.s
+.PHONY : src/Renderer/OrthographicCamera.s
+
+# target to generate assembly for a file
+src/Renderer/OrthographicCamera.cpp.s:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Renderer/OrthographicCamera.cpp.s
+.PHONY : src/Renderer/OrthographicCamera.cpp.s
+
+src/Renderer/RenderCommand.o: src/Renderer/RenderCommand.cpp.o
+.PHONY : src/Renderer/RenderCommand.o
+
+# target to build an object file
+src/Renderer/RenderCommand.cpp.o:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Renderer/RenderCommand.cpp.o
+.PHONY : src/Renderer/RenderCommand.cpp.o
+
+src/Renderer/RenderCommand.i: src/Renderer/RenderCommand.cpp.i
+.PHONY : src/Renderer/RenderCommand.i
+
+# target to preprocess a source file
+src/Renderer/RenderCommand.cpp.i:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Renderer/RenderCommand.cpp.i
+.PHONY : src/Renderer/RenderCommand.cpp.i
+
+src/Renderer/RenderCommand.s: src/Renderer/RenderCommand.cpp.s
+.PHONY : src/Renderer/RenderCommand.s
+
+# target to generate assembly for a file
+src/Renderer/RenderCommand.cpp.s:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Renderer/RenderCommand.cpp.s
+.PHONY : src/Renderer/RenderCommand.cpp.s
+
+src/Renderer/Renderer2D.o: src/Renderer/Renderer2D.cpp.o
+.PHONY : src/Renderer/Renderer2D.o
+
+# target to build an object file
+src/Renderer/Renderer2D.cpp.o:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Renderer/Renderer2D.cpp.o
+.PHONY : src/Renderer/Renderer2D.cpp.o
+
+src/Renderer/Renderer2D.i: src/Renderer/Renderer2D.cpp.i
+.PHONY : src/Renderer/Renderer2D.i
+
+# target to preprocess a source file
+src/Renderer/Renderer2D.cpp.i:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Renderer/Renderer2D.cpp.i
+.PHONY : src/Renderer/Renderer2D.cpp.i
+
+src/Renderer/Renderer2D.s: src/Renderer/Renderer2D.cpp.s
+.PHONY : src/Renderer/Renderer2D.s
+
+# target to generate assembly for a file
+src/Renderer/Renderer2D.cpp.s:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Renderer/Renderer2D.cpp.s
+.PHONY : src/Renderer/Renderer2D.cpp.s
+
+src/Renderer/Shader.o: src/Renderer/Shader.cpp.o
+.PHONY : src/Renderer/Shader.o
+
+# target to build an object file
+src/Renderer/Shader.cpp.o:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Renderer/Shader.cpp.o
+.PHONY : src/Renderer/Shader.cpp.o
+
+src/Renderer/Shader.i: src/Renderer/Shader.cpp.i
+.PHONY : src/Renderer/Shader.i
+
+# target to preprocess a source file
+src/Renderer/Shader.cpp.i:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Renderer/Shader.cpp.i
+.PHONY : src/Renderer/Shader.cpp.i
+
+src/Renderer/Shader.s: src/Renderer/Shader.cpp.s
+.PHONY : src/Renderer/Shader.s
+
+# target to generate assembly for a file
+src/Renderer/Shader.cpp.s:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Renderer/Shader.cpp.s
+.PHONY : src/Renderer/Shader.cpp.s
+
+src/Renderer/Texture2D.o: src/Renderer/Texture2D.cpp.o
+.PHONY : src/Renderer/Texture2D.o
+
+# target to build an object file
+src/Renderer/Texture2D.cpp.o:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Renderer/Texture2D.cpp.o
+.PHONY : src/Renderer/Texture2D.cpp.o
+
+src/Renderer/Texture2D.i: src/Renderer/Texture2D.cpp.i
+.PHONY : src/Renderer/Texture2D.i
+
+# target to preprocess a source file
+src/Renderer/Texture2D.cpp.i:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Renderer/Texture2D.cpp.i
+.PHONY : src/Renderer/Texture2D.cpp.i
+
+src/Renderer/Texture2D.s: src/Renderer/Texture2D.cpp.s
+.PHONY : src/Renderer/Texture2D.s
+
+# target to generate assembly for a file
+src/Renderer/Texture2D.cpp.s:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Renderer/Texture2D.cpp.s
+.PHONY : src/Renderer/Texture2D.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -209,17 +494,51 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... GameEngine"
+	@echo "... __/external/glad/src/glad.o"
+	@echo "... __/external/glad/src/glad.i"
+	@echo "... __/external/glad/src/glad.s"
 	@echo "... src/Core/Application.o"
 	@echo "... src/Core/Application.i"
 	@echo "... src/Core/Application.s"
 	@echo "... src/Core/FileSystem.o"
 	@echo "... src/Core/FileSystem.i"
 	@echo "... src/Core/FileSystem.s"
+	@echo "... src/Core/Input.o"
+	@echo "... src/Core/Input.i"
+	@echo "... src/Core/Input.s"
 	@echo "... src/Core/Log.o"
 	@echo "... src/Core/Log.i"
 	@echo "... src/Core/Log.s"
+	@echo "... src/Core/Timer.o"
+	@echo "... src/Core/Timer.i"
+	@echo "... src/Core/Timer.s"
+	@echo "... src/Core/Window.o"
+	@echo "... src/Core/Window.i"
+	@echo "... src/Core/Window.s"
+	@echo "... src/Renderer/Framebuffer.o"
+	@echo "... src/Renderer/Framebuffer.i"
+	@echo "... src/Renderer/Framebuffer.s"
+	@echo "... src/Renderer/OrthographicCamera.o"
+	@echo "... src/Renderer/OrthographicCamera.i"
+	@echo "... src/Renderer/OrthographicCamera.s"
+	@echo "... src/Renderer/RenderCommand.o"
+	@echo "... src/Renderer/RenderCommand.i"
+	@echo "... src/Renderer/RenderCommand.s"
+	@echo "... src/Renderer/Renderer2D.o"
+	@echo "... src/Renderer/Renderer2D.i"
+	@echo "... src/Renderer/Renderer2D.s"
+	@echo "... src/Renderer/Shader.o"
+	@echo "... src/Renderer/Shader.i"
+	@echo "... src/Renderer/Shader.s"
+	@echo "... src/Renderer/Texture2D.o"
+	@echo "... src/Renderer/Texture2D.i"
+	@echo "... src/Renderer/Texture2D.s"
 .PHONY : help
 
 

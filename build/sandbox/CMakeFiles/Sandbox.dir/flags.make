@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DENGINE_ENABLE_ASSERTS
 
-CXX_INCLUDES = -I/home/jeffg/cpp_projects/GameEngine/engine/include
+CXX_INCLUDES = -I/home/jeffg/cpp_projects/GameEngine/engine/include -I/home/jeffg/cpp_projects/GameEngine/external/glad/include -I/home/jeffg/cpp_projects/GameEngine/external/stb -I/home/jeffg/cpp_projects/GameEngine/external/glfw/include
 
 CXX_FLAGS = -std=c++20
 
