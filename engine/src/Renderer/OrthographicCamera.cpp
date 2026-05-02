@@ -14,19 +14,22 @@ namespace Engine
         };
     }
 
-    static std::array<float, 16> multiply(const std::array<float, 16>& a, const std::array<float, 16>& b)
+    static std::array<float, 16> multiply(
+        const std::array<float, 16>& a,
+        const std::array<float, 16>& b
+    )
     {
         std::array<float, 16> result{};
 
-        for (int row = 0; row < 4; row++)
+        for (int col = 0; col < 4; ++col)
         {
-            for (int col = 0; col < 4; col++)
+            for (int row = 0; row < 4; ++row)
             {
-                result[col + row * 4] =
-                    a[0 + row * 4] * b[col + 0 * 4] +
-                    a[1 + row * 4] * b[col + 1 * 4] +
-                    a[2 + row * 4] * b[col + 2 * 4] +
-                    a[3 + row * 4] * b[col + 3 * 4];
+                result[col * 4 + row] =
+                    a[0 * 4 + row] * b[col * 4 + 0] +
+                    a[1 * 4 + row] * b[col * 4 + 1] +
+                    a[2 * 4 + row] * b[col * 4 + 2] +
+                    a[3 * 4 + row] * b[col * 4 + 3];
             }
         }
 
@@ -74,12 +77,12 @@ namespace Engine
         m_view = identity();
 
         m_view[0] = c;
-        m_view[1] = s;
-        m_view[4] = -s;
+        m_view[1] = -s;
+        m_view[4] = s;
         m_view[5] = c;
 
-        m_view[12] = -m_positionX;
-        m_view[13] = -m_positionY;
+        m_view[12] = -(c * m_positionX + s * m_positionY);
+        m_view[13] = -(-s * m_positionX + c * m_positionY);
         m_view[14] = -m_positionZ;
 
         m_viewProjection = multiply(m_projection, m_view);

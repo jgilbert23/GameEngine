@@ -58,6 +58,9 @@ namespace Engine
 
             m_window->pollEvents();
 
+            Engine::RenderCommand::setClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+            Engine::RenderCommand::clear();
+
             m_fixedTimeAccumulator += deltaTime;
 
             while (m_fixedTimeAccumulator >= FixedDeltaTime)
@@ -67,6 +70,7 @@ namespace Engine
             }
 
             update(deltaTime);
+
             render();
 
             m_window->swapBuffers();
@@ -123,7 +127,7 @@ namespace Engine
 
     void Application::render()
     {
-        RenderCommand::setClearColor(0.1f, 0.1f, 0.12f, 1.0f);
-        RenderCommand::clear();
+        for (auto& layer : m_layers)
+            layer->onRender();
     }
 }

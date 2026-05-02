@@ -21,6 +21,7 @@ namespace Engine
         virtual void onDetach() {}
 
         virtual void onUpdate(float deltaTime) {}
+        virtual void onRender() {}
         virtual void onFixedUpdate(float fixedDeltaTime) {}
         virtual void onEvent(Event& event) {}
 
