@@ -1,0 +1,133 @@
+# =========================
+# Build directories
+# =========================
+/build/
+/build-*/
+/cmake-build-*/
+/out/
+/bin/
+/lib/
+
+# =========================
+# CMake files
+# =========================
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+
+# =========================
+# Make / Ninja
+# =========================
+Makefile
+*.make
+*.ninja
+*.ninja_deps
+*.ninja_log
+
+# =========================
+# Object / binary files
+# =========================
+*.o
+*.obj
+*.lo
+*.slo
+*.a
+*.la
+*.lib
+*.dll
+*.dylib
+*.so
+*.exe
+*.out
+*.app
+
+# =========================
+# Debug / crash files
+# =========================
+*.log
+*.stackdump
+*.core
+core
+
+# =========================
+# IDEs
+# =========================
+
+## VS Code
+.vscode/
+*.code-workspace
+
+## CLion / JetBrains
+.idea/
+*.iml
+
+## Visual Studio
+.vs/
+*.vcxproj*
+*.sln
+*.user
+*.opensdf
+*.sdf
+*.pdb
+*.ipch/
+
+## Xcode
+*.xcodeproj/
+*.xcworkspace/
+DerivedData/
+
+# =========================
+# macOS
+# =========================
+.DS_Store
+
+# =========================
+# Linux
+# =========================
+*~
+*.swp
+*.swo
+
+# =========================
+# External dependencies (optional)
+# =========================
+
+# If using submodules, keep them tracked
+# Otherwise ignore vendor builds:
+
+external/glfw/build/
+external/glfw/CMakeFiles/
+external/glfw/src/
+external/glfw/examples/
+external/glfw/tests/
+external/glfw/docs/
+
+# =========================
+# Assets (optional)
+# =========================
+
+# Uncomment if you generate assets at runtime
+# /assets/generated/
+
+# =========================
+# Temporary files
+# =========================
+tmp/
+temp/
+*.tmp
+
+# =========================
+# Coverage / profiling
+# =========================
+*.gcda
+*.gcno
+*.prof
+*.profraw
+*.profdata
+
+# =========================
+# Cache
+# =========================
+.cache/
