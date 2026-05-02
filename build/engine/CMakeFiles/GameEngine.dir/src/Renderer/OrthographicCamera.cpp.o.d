@@ -2,6 +2,7 @@ engine/CMakeFiles/GameEngine.dir/src/Renderer/OrthographicCamera.cpp.o: \
  /home/jeffg/cpp_projects/GameEngine/engine/src/Renderer/OrthographicCamera.cpp \
  /usr/include/stdc-predef.h \
  /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/OrthographicCamera.hpp \
+ /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/Camera.hpp \
  /usr/include/c++/15/array /usr/include/c++/15/compare \
  /usr/include/c++/15/bits/version.h \
  /usr/include/c++/15/x86_64-redhat-linux/bits/c++config.h \

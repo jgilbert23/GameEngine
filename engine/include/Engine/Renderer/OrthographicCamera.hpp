@@ -1,10 +1,11 @@
 #pragma once
 
+#include "Engine/Renderer/Camera.hpp"
 #include <array>
 
 namespace Engine
 {
-    class OrthographicCamera
+    class OrthographicCamera : public Camera
     {
     public:
         OrthographicCamera(float left, float right, float bottom, float top);
@@ -12,7 +13,7 @@ namespace Engine
         void setPosition(float x, float y, float z);
         void setRotation(float rotationDegrees);
 
-        const std::array<float, 16>& viewProjectionMatrix() const;
+        const std::array<float, 16>& viewProjectionMatrix() const override;
 
     private:
         std::array<float, 16> m_projection{};

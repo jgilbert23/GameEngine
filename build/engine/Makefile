@@ -343,6 +343,30 @@ src/Core/Window.cpp.s:
 	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Core/Window.cpp.s
 .PHONY : src/Core/Window.cpp.s
 
+src/Renderer/Camera.o: src/Renderer/Camera.cpp.o
+.PHONY : src/Renderer/Camera.o
+
+# target to build an object file
+src/Renderer/Camera.cpp.o:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Renderer/Camera.cpp.o
+.PHONY : src/Renderer/Camera.cpp.o
+
+src/Renderer/Camera.i: src/Renderer/Camera.cpp.i
+.PHONY : src/Renderer/Camera.i
+
+# target to preprocess a source file
+src/Renderer/Camera.cpp.i:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Renderer/Camera.cpp.i
+.PHONY : src/Renderer/Camera.cpp.i
+
+src/Renderer/Camera.s: src/Renderer/Camera.cpp.s
+.PHONY : src/Renderer/Camera.s
+
+# target to generate assembly for a file
+src/Renderer/Camera.cpp.s:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Renderer/Camera.cpp.s
+.PHONY : src/Renderer/Camera.cpp.s
+
 src/Renderer/Framebuffer.o: src/Renderer/Framebuffer.cpp.o
 .PHONY : src/Renderer/Framebuffer.o
 
@@ -366,6 +390,30 @@ src/Renderer/Framebuffer.s: src/Renderer/Framebuffer.cpp.s
 src/Renderer/Framebuffer.cpp.s:
 	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Renderer/Framebuffer.cpp.s
 .PHONY : src/Renderer/Framebuffer.cpp.s
+
+src/Renderer/IndexBuffer.o: src/Renderer/IndexBuffer.cpp.o
+.PHONY : src/Renderer/IndexBuffer.o
+
+# target to build an object file
+src/Renderer/IndexBuffer.cpp.o:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Renderer/IndexBuffer.cpp.o
+.PHONY : src/Renderer/IndexBuffer.cpp.o
+
+src/Renderer/IndexBuffer.i: src/Renderer/IndexBuffer.cpp.i
+.PHONY : src/Renderer/IndexBuffer.i
+
+# target to preprocess a source file
+src/Renderer/IndexBuffer.cpp.i:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Renderer/IndexBuffer.cpp.i
+.PHONY : src/Renderer/IndexBuffer.cpp.i
+
+src/Renderer/IndexBuffer.s: src/Renderer/IndexBuffer.cpp.s
+.PHONY : src/Renderer/IndexBuffer.s
+
+# target to generate assembly for a file
+src/Renderer/IndexBuffer.cpp.s:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Renderer/IndexBuffer.cpp.s
+.PHONY : src/Renderer/IndexBuffer.cpp.s
 
 src/Renderer/OrthographicCamera.o: src/Renderer/OrthographicCamera.cpp.o
 .PHONY : src/Renderer/OrthographicCamera.o
@@ -463,6 +511,30 @@ src/Renderer/Shader.cpp.s:
 	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Renderer/Shader.cpp.s
 .PHONY : src/Renderer/Shader.cpp.s
 
+src/Renderer/SpriteRenderer.o: src/Renderer/SpriteRenderer.cpp.o
+.PHONY : src/Renderer/SpriteRenderer.o
+
+# target to build an object file
+src/Renderer/SpriteRenderer.cpp.o:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Renderer/SpriteRenderer.cpp.o
+.PHONY : src/Renderer/SpriteRenderer.cpp.o
+
+src/Renderer/SpriteRenderer.i: src/Renderer/SpriteRenderer.cpp.i
+.PHONY : src/Renderer/SpriteRenderer.i
+
+# target to preprocess a source file
+src/Renderer/SpriteRenderer.cpp.i:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Renderer/SpriteRenderer.cpp.i
+.PHONY : src/Renderer/SpriteRenderer.cpp.i
+
+src/Renderer/SpriteRenderer.s: src/Renderer/SpriteRenderer.cpp.s
+.PHONY : src/Renderer/SpriteRenderer.s
+
+# target to generate assembly for a file
+src/Renderer/SpriteRenderer.cpp.s:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Renderer/SpriteRenderer.cpp.s
+.PHONY : src/Renderer/SpriteRenderer.cpp.s
+
 src/Renderer/Texture2D.o: src/Renderer/Texture2D.cpp.o
 .PHONY : src/Renderer/Texture2D.o
 
@@ -486,6 +558,54 @@ src/Renderer/Texture2D.s: src/Renderer/Texture2D.cpp.s
 src/Renderer/Texture2D.cpp.s:
 	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Renderer/Texture2D.cpp.s
 .PHONY : src/Renderer/Texture2D.cpp.s
+
+src/Renderer/VertexArray.o: src/Renderer/VertexArray.cpp.o
+.PHONY : src/Renderer/VertexArray.o
+
+# target to build an object file
+src/Renderer/VertexArray.cpp.o:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Renderer/VertexArray.cpp.o
+.PHONY : src/Renderer/VertexArray.cpp.o
+
+src/Renderer/VertexArray.i: src/Renderer/VertexArray.cpp.i
+.PHONY : src/Renderer/VertexArray.i
+
+# target to preprocess a source file
+src/Renderer/VertexArray.cpp.i:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Renderer/VertexArray.cpp.i
+.PHONY : src/Renderer/VertexArray.cpp.i
+
+src/Renderer/VertexArray.s: src/Renderer/VertexArray.cpp.s
+.PHONY : src/Renderer/VertexArray.s
+
+# target to generate assembly for a file
+src/Renderer/VertexArray.cpp.s:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Renderer/VertexArray.cpp.s
+.PHONY : src/Renderer/VertexArray.cpp.s
+
+src/Renderer/VertexBuffer.o: src/Renderer/VertexBuffer.cpp.o
+.PHONY : src/Renderer/VertexBuffer.o
+
+# target to build an object file
+src/Renderer/VertexBuffer.cpp.o:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Renderer/VertexBuffer.cpp.o
+.PHONY : src/Renderer/VertexBuffer.cpp.o
+
+src/Renderer/VertexBuffer.i: src/Renderer/VertexBuffer.cpp.i
+.PHONY : src/Renderer/VertexBuffer.i
+
+# target to preprocess a source file
+src/Renderer/VertexBuffer.cpp.i:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Renderer/VertexBuffer.cpp.i
+.PHONY : src/Renderer/VertexBuffer.cpp.i
+
+src/Renderer/VertexBuffer.s: src/Renderer/VertexBuffer.cpp.s
+.PHONY : src/Renderer/VertexBuffer.s
+
+# target to generate assembly for a file
+src/Renderer/VertexBuffer.cpp.s:
+	cd /home/jeffg/cpp_projects/GameEngine/build && $(MAKE) $(MAKESILENT) -f engine/CMakeFiles/GameEngine.dir/build.make engine/CMakeFiles/GameEngine.dir/src/Renderer/VertexBuffer.cpp.s
+.PHONY : src/Renderer/VertexBuffer.cpp.s
 
 # Help Target
 help:
@@ -521,9 +641,15 @@ help:
 	@echo "... src/Core/Window.o"
 	@echo "... src/Core/Window.i"
 	@echo "... src/Core/Window.s"
+	@echo "... src/Renderer/Camera.o"
+	@echo "... src/Renderer/Camera.i"
+	@echo "... src/Renderer/Camera.s"
 	@echo "... src/Renderer/Framebuffer.o"
 	@echo "... src/Renderer/Framebuffer.i"
 	@echo "... src/Renderer/Framebuffer.s"
+	@echo "... src/Renderer/IndexBuffer.o"
+	@echo "... src/Renderer/IndexBuffer.i"
+	@echo "... src/Renderer/IndexBuffer.s"
 	@echo "... src/Renderer/OrthographicCamera.o"
 	@echo "... src/Renderer/OrthographicCamera.i"
 	@echo "... src/Renderer/OrthographicCamera.s"
@@ -536,9 +662,18 @@ help:
 	@echo "... src/Renderer/Shader.o"
 	@echo "... src/Renderer/Shader.i"
 	@echo "... src/Renderer/Shader.s"
+	@echo "... src/Renderer/SpriteRenderer.o"
+	@echo "... src/Renderer/SpriteRenderer.i"
+	@echo "... src/Renderer/SpriteRenderer.s"
 	@echo "... src/Renderer/Texture2D.o"
 	@echo "... src/Renderer/Texture2D.i"
 	@echo "... src/Renderer/Texture2D.s"
+	@echo "... src/Renderer/VertexArray.o"
+	@echo "... src/Renderer/VertexArray.i"
+	@echo "... src/Renderer/VertexArray.s"
+	@echo "... src/Renderer/VertexBuffer.o"
+	@echo "... src/Renderer/VertexBuffer.i"
+	@echo "... src/Renderer/VertexBuffer.s"
 .PHONY : help
 
 

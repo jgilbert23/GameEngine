@@ -1,5 +1,8 @@
 #include "Engine/Renderer/Renderer2D.hpp"
 #include "Engine/Renderer/Shader.hpp"
+#include "Engine/Renderer/VertexArray.hpp"
+#include "Engine/Renderer/VertexBuffer.hpp"
+#include "Engine/Renderer/IndexBuffer.hpp"
 
 #include <glad/glad.h>
 
@@ -26,6 +29,9 @@ namespace Engine
         unsigned int vao = 0;
         unsigned int vbo = 0;
         unsigned int ibo = 0;
+        // std::unique_ptr<VertexArray> quadVertexArray;
+        // std::shared_ptr<VertexBuffer> quadVertexBuffer;
+        // std::shared_ptr<IndexBuffer> quadIndexBuffer;
 
         unsigned int quadIndexCount = 0;
 
@@ -113,6 +119,25 @@ namespace Engine
 
     void Renderer2D::init()
     {
+        // s_data.quadVertexArray = std::make_unique<VertexArray>();
+        // s_data.quadVertexBuffer = std::make_unique<VertexBuffer>(
+        //     Renderer2DData::MaxVertices * sizeof(QuadVertex)
+        // );
+
+        // VertexAttribute attributes[] = {
+        //     {0, ShaderDataType::Float3, false }, // position
+        //     {1, ShaderDataType::Float4, false }, // color
+        //     {2, ShaderDataType::Float2, false }, // texCoord
+        //     {3, ShaderDataType::Float, false } // texIndex
+        // };
+
+        // s_data.quadVertexArray->addVertexBuffer(
+        //     s_data.quadVertexBuffer,
+        //     attributes,
+        //     4,
+        //     sizeof(QuadVertex)
+        // );
+
         glGenVertexArrays(1, &s_data.vao);
         glBindVertexArray(s_data.vao);
 
@@ -132,7 +157,7 @@ namespace Engine
         glEnableVertexAttribArray(3);
         glVertexAttribPointer(3, 1, GL_FLOAT, GL_FALSE, sizeof(QuadVertex), reinterpret_cast<const void*>(offsetof(QuadVertex, texIndex)));
 
-        unsigned int* indices = new unsigned int[Renderer2DData::MaxIndices];
+        auto* indices = new unsigned int[Renderer2DData::MaxIndices];
 
         unsigned int offset = 0;
         for (unsigned int i = 0; i < Renderer2DData::MaxIndices; i += 6)

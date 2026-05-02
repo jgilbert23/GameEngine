@@ -217,6 +217,7 @@ sandbox/CMakeFiles/Sandbox.dir/main.cpp.o: \
  /usr/include/c++/15/pstl/glue_memory_defs.h \
  /usr/include/c++/15/pstl/execution_defs.h \
  /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/OrthographicCamera.hpp \
+ /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/Camera.hpp \
  /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/Renderer2D.hpp \
  /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/Texture2D.hpp \
  /usr/include/c++/15/filesystem /usr/include/c++/15/bits/fs_fwd.h \

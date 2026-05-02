@@ -222,6 +222,7 @@ engine/CMakeFiles/GameEngine.dir/src/Core/Application.cpp.o: \
  /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/RenderCommand.hpp \
  /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/Renderer2D.hpp \
  /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/OrthographicCamera.hpp \
+ /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/Camera.hpp \
  /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/Texture2D.hpp \
  /usr/include/c++/15/filesystem /usr/include/c++/15/bits/fs_fwd.h \
  /usr/include/c++/15/bits/fs_path.h /usr/include/c++/15/codecvt \

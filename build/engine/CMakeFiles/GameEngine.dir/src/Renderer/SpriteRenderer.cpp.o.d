@@ -1,7 +1,7 @@
-engine/CMakeFiles/GameEngine.dir/src/Renderer/Renderer2D.cpp.o: \
- /home/jeffg/cpp_projects/GameEngine/engine/src/Renderer/Renderer2D.cpp \
+engine/CMakeFiles/GameEngine.dir/src/Renderer/SpriteRenderer.cpp.o: \
+ /home/jeffg/cpp_projects/GameEngine/engine/src/Renderer/SpriteRenderer.cpp \
  /usr/include/stdc-predef.h \
- /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/Renderer2D.hpp \
+ /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/SpriteRenderer.hpp \
  /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/OrthographicCamera.hpp \
  /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/Camera.hpp \
  /usr/include/c++/15/array /usr/include/c++/15/compare \
@@ -168,6 +168,7 @@ engine/CMakeFiles/GameEngine.dir/src/Renderer/Renderer2D.cpp.o: \
  /usr/include/c++/15/bits/align.h \
  /usr/include/c++/15/bits/stl_uninitialized.h \
  /usr/include/c++/15/bits/fs_dir.h /usr/include/c++/15/bits/fs_ops.h \
+ /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/Renderer2D.hpp \
  /usr/include/c++/15/memory /usr/include/c++/15/bits/stl_tempbuf.h \
  /usr/include/c++/15/bits/stl_raw_storage_iter.h \
  /usr/include/c++/15/bits/shared_ptr_atomic.h \
@@ -191,10 +192,4 @@ engine/CMakeFiles/GameEngine.dir/src/Renderer/Renderer2D.cpp.o: \
  /usr/include/c++/15/bits/ranges_uninitialized.h \
  /usr/include/c++/15/bits/ranges_algobase.h \
  /usr/include/c++/15/pstl/glue_memory_defs.h \
- /usr/include/c++/15/pstl/execution_defs.h \
- /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/Shader.hpp \
- /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/VertexArray.hpp \
- /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/IndexBuffer.hpp \
- /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/VertexBuffer.hpp \
- /home/jeffg/cpp_projects/GameEngine/external/glad/include/glad/glad.h \
- /home/jeffg/cpp_projects/GameEngine/external/glad/include/KHR/khrplatform.h
+ /usr/include/c++/15/pstl/execution_defs.h

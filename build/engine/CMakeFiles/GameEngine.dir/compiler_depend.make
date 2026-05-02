@@ -79,6 +79,7 @@ engine/CMakeFiles/GameEngine.dir/src/Core/Application.cpp.o: /home/jeffg/cpp_pro
   /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Core/Log.hpp \
   /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Core/Timer.hpp \
   /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Core/Window.hpp \
+  /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/Camera.hpp \
   /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/OrthographicCamera.hpp \
   /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/RenderCommand.hpp \
   /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/Renderer2D.hpp \
@@ -1745,10 +1746,14 @@ engine/CMakeFiles/GameEngine.dir/src/Renderer/RenderCommand.cpp.o: /home/jeffg/c
   /usr/lib/gcc/x86_64-redhat-linux/15/include/stdint.h
 
 engine/CMakeFiles/GameEngine.dir/src/Renderer/Renderer2D.cpp.o: /home/jeffg/cpp_projects/GameEngine/engine/src/Renderer/Renderer2D.cpp \
+  /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/Camera.hpp \
+  /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/IndexBuffer.hpp \
   /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/OrthographicCamera.hpp \
   /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/Renderer2D.hpp \
   /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/Shader.hpp \
   /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/Texture2D.hpp \
+  /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/VertexArray.hpp \
+  /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/VertexBuffer.hpp \
   /home/jeffg/cpp_projects/GameEngine/external/glad/include/KHR/khrplatform.h \
   /home/jeffg/cpp_projects/GameEngine/external/glad/include/glad/glad.h \
   /usr/include/alloca.h \
@@ -2560,6 +2565,10 @@ engine/CMakeFiles/GameEngine.dir/src/Renderer/Texture2D.cpp.o: /home/jeffg/cpp_p
 
 /home/jeffg/cpp_projects/GameEngine/engine/src/Renderer/Shader.cpp:
 
+/home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/VertexBuffer.hpp:
+
+/home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/IndexBuffer.hpp:
+
 /home/jeffg/cpp_projects/GameEngine/engine/src/Renderer/Renderer2D.cpp:
 
 /usr/include/math.h:
@@ -2621,6 +2630,8 @@ engine/CMakeFiles/GameEngine.dir/src/Renderer/Texture2D.cpp.o: /home/jeffg/cpp_p
 /usr/include/assert.h:
 
 /usr/include/c++/15/fstream:
+
+/home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/VertexArray.hpp:
 
 /usr/lib/gcc/x86_64-redhat-linux/15/include/syslimits.h:
 
@@ -2806,6 +2817,10 @@ engine/CMakeFiles/GameEngine.dir/src/Renderer/Texture2D.cpp.o: /home/jeffg/cpp_p
 
 /usr/include/asm-generic/bitsperlong.h:
 
+/usr/include/c++/15/ext/alloc_traits.h:
+
+/home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Core/Timer.hpp:
+
 /usr/include/c++/15/bits/node_handle.h:
 
 /usr/include/bits/types/__mbstate_t.h:
@@ -2982,6 +2997,8 @@ engine/CMakeFiles/GameEngine.dir/src/Renderer/Texture2D.cpp.o: /home/jeffg/cpp_p
 
 /usr/include/bits/uintn-identity.h:
 
+/home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/Camera.hpp:
+
 /usr/include/bits/typesizes.h:
 
 /usr/include/bits/types/locale_t.h:
@@ -3048,9 +3065,9 @@ engine/CMakeFiles/GameEngine.dir/src/Renderer/Texture2D.cpp.o: /home/jeffg/cpp_p
 
 /usr/include/c++/15/bits/algorithmfwd.h:
 
-/usr/include/c++/15/bit:
-
 /usr/include/asm-generic/posix_types.h:
+
+/usr/include/c++/15/bit:
 
 /usr/include/c++/15/bits/allocator.h:
 
@@ -3317,7 +3334,3 @@ engine/CMakeFiles/GameEngine.dir/src/Renderer/Texture2D.cpp.o: /home/jeffg/cpp_p
 /usr/include/c++/15/debug/debug.h:
 
 /usr/include/c++/15/ext/aligned_buffer.h:
-
-/home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Core/Timer.hpp:
-
-/usr/include/c++/15/ext/alloc_traits.h:

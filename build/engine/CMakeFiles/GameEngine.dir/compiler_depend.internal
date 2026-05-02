@@ -81,6 +81,7 @@ engine/CMakeFiles/GameEngine.dir/src/Core/Application.cpp.o
  /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Core/Log.hpp
  /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Core/Timer.hpp
  /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Core/Window.hpp
+ /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/Camera.hpp
  /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/OrthographicCamera.hpp
  /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/RenderCommand.hpp
  /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/Renderer2D.hpp
@@ -1756,10 +1757,14 @@ engine/CMakeFiles/GameEngine.dir/src/Renderer/RenderCommand.cpp.o
 
 engine/CMakeFiles/GameEngine.dir/src/Renderer/Renderer2D.cpp.o
  /home/jeffg/cpp_projects/GameEngine/engine/src/Renderer/Renderer2D.cpp
+ /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/Camera.hpp
+ /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/IndexBuffer.hpp
  /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/OrthographicCamera.hpp
  /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/Renderer2D.hpp
  /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/Shader.hpp
  /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/Texture2D.hpp
+ /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/VertexArray.hpp
+ /home/jeffg/cpp_projects/GameEngine/engine/include/Engine/Renderer/VertexBuffer.hpp
  /home/jeffg/cpp_projects/GameEngine/external/glad/include/KHR/khrplatform.h
  /home/jeffg/cpp_projects/GameEngine/external/glad/include/glad/glad.h
  /usr/include/alloca.h

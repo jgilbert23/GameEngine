@@ -12,6 +12,11 @@ add_library(GameEngine STATIC
     src/Renderer/Texture2D.cpp
     src/Renderer/OrthographicCamera.cpp
     src/Renderer/Framebuffer.cpp
+    src/Renderer/VertexBuffer.cpp
+    src/Renderer/IndexBuffer.cpp
+    src/Renderer/VertexArray.cpp
+    src/Renderer/Camera.cpp
+    src/Renderer/SpriteRenderer.cpp
 
     ${CMAKE_SOURCE_DIR}/external/glad/src/glad.c
 )
