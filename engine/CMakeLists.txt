@@ -36,12 +36,10 @@ target_include_directories(GameEngine
 )
 
 target_link_libraries(GameEngine
-    PUBLIC glfw
-)
-
-target_link_libraries(GameEngine
-    PUBLIC glfw
-    EnTT::EnTT
+    PUBLIC
+        glfw
+        EnTT::EnTT
+        box2d
 )
 
 target_compile_definitions(GameEngine

@@ -49,8 +49,14 @@ public:
     void onAttach() override
     {
         reset();
+        m_scene.onPhysicsStart();
     }
 
+    void onFixedUpdate(float fixedDt) override
+    {
+        m_scene.onPhysicsStep(fixedDt);
+    }
+    
     void onUpdate(float dt) override
     {
         if (m_gameOver)

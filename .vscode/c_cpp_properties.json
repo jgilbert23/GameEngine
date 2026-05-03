@@ -6,7 +6,8 @@
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/engine/include",
                 "${workspaceFolder}/external/glad/include",
-                "${workspaceFolder}/"
+                "${workspaceFolder}/external/box2d/",
+                "${workspaceFolder}/external/box2d/include"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/clang",
