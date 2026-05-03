@@ -18,6 +18,10 @@ add_library(GameEngine STATIC
     src/Renderer/Camera.cpp
     src/Renderer/SpriteRenderer.cpp
 
+    src/Assets/AssetManager.cpp
+    src/Assets/TextureLibrary.cpp
+    src/Assets/ShaderLibrary.cpp
+
     ${CMAKE_SOURCE_DIR}/external/glad/src/glad.c
 )
 
