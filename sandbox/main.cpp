@@ -7,6 +7,9 @@
 #include "Engine/Scene/Entity.hpp"
 #include "Engine/Scene/Scene.hpp"
 
+#include "Engine/Renderer/OrthographicCamera.hpp"
+#include "Engine/Renderer/Renderer2D.hpp"
+
 #include <GLFW/glfw3.h>
 
 #include <algorithm>
@@ -26,6 +29,7 @@ struct EnemyComponent
 
 struct PlayerComponent
 {
+    bool active = true;
 };
 
 struct LifetimeComponent
@@ -71,6 +75,38 @@ public:
     void onRender() override
     {
         m_scene.onRender();
+
+        Engine::OrthographicCamera camera(0.0f, 16.0f, 0.0f, 9.0f);
+
+        Engine::Renderer2D::beginScene(camera);
+
+        // Lives: green bars
+        for (int i = 0; i < m_lives; ++i)
+        {
+            Engine::Renderer2D::drawQuad(
+                0.45f + static_cast<float>(i) * 0.55f,
+                8.65f,
+                0.45f,
+                0.18f,
+                0.2f, 1.0f, 0.3f, 1.0f
+            );
+        }
+
+        // Score: yellow bars
+        const int scoreBars = std::min(m_score, 20);
+
+        for (int i = 0; i < scoreBars; ++i)
+        {
+            Engine::Renderer2D::drawQuad(
+                15.5f - static_cast<float>(i) * 0.18f,
+                8.65f,
+                0.12f,
+                0.18f,
+                1.0f, 0.8f, 0.2f, 1.0f
+            );
+        }
+
+        Engine::Renderer2D::endScene();
     }
 
 private:
@@ -95,7 +131,7 @@ private:
 private:
     void reset()
     {
-        m_scene = Engine::Scene{};
+        m_scene.clear();
 
         m_score = 0;
         m_lives = 3;
@@ -104,7 +140,7 @@ private:
         m_spawnTimer = 0.0f;
 
         createCamera();
-        createBackground();
+        // createBackground();
         createPlayer();
     }
 

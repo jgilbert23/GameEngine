@@ -3,6 +3,7 @@
 #include "Engine/Renderer/OrthographicCamera.hpp"
 #include "Engine/Renderer/Renderer2D.hpp"
 #include "Engine/Scene/Components.hpp"
+#include "Engine/Core/Log.hpp"
 
 namespace Engine
 {
@@ -47,9 +48,9 @@ namespace Engine
 
         auto cameraView = m_registry.view<TransformComponent, CameraComponent>();
 
-        for (auto entity : cameraView)
+        for (auto entityHandle : cameraView)
         {
-            const auto& cameraComponent = cameraView.get<CameraComponent>(entity);
+            const auto& cameraComponent = cameraView.get<CameraComponent>(entityHandle);
 
             if (cameraComponent.primary)
             {
@@ -60,9 +61,9 @@ namespace Engine
                     cameraComponent.top
                 );
 
-                const auto& transform = cameraView.get<TransformComponent>(entity);
-                camera.setPosition(transform.x, transform.y, transform.z);
-                camera.setRotation(transform.rotation);
+                const auto& transform = cameraView.get<TransformComponent>(entityHandle);
+                // camera.setPosition(transform.x, transform.y, transform.z);
+                // camera.setRotation(transform.rotation);
                 break;
             }
         }
@@ -71,10 +72,10 @@ namespace Engine
 
         auto spriteView = m_registry.view<TransformComponent, SpriteComponent>();
 
-        for (auto entity : spriteView)
+        for (auto entityHandle : spriteView)
         {
-            const auto& transform = spriteView.get<TransformComponent>(entity);
-            const auto& sprite = spriteView.get<SpriteComponent>(entity);
+            const auto& transform = spriteView.get<TransformComponent>(entityHandle);
+            const auto& sprite = spriteView.get<SpriteComponent>(entityHandle);
 
             if (sprite.texture)
             {
@@ -112,5 +113,10 @@ namespace Engine
     const entt::registry& Scene::registry() const
     {
         return m_registry;
+    }
+
+    void Scene::clear()
+    {
+        m_registry.clear();
     }
 }

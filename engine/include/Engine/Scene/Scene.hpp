@@ -21,6 +21,8 @@ namespace Engine
         void onUpdate(float dt);
         void onRender();
 
+        void clear();
+        
         entt::registry& registry();
         const entt::registry& registry() const;
 

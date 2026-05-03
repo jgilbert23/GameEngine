@@ -7,7 +7,7 @@ namespace Engine
     template <typename T, typename... Args>
     T& Entity::addComponent(Args&&... args)
     {
-        return m_scene->m_registry.emplace<T>(
+        return m_scene->m_registry.emplace_or_replace<T>(
             m_handle,
             std::forward<Args>(args)...
         );
