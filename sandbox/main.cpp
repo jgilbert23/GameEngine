@@ -2,8 +2,10 @@
 #include "Engine/Core/Config.hpp"
 #include "Engine/Core/Input.hpp"
 #include "Engine/Core/Layer.hpp"
-#include "Engine/Renderer/OrthographicCamera.hpp"
-#include "Engine/Renderer/Renderer2D.hpp"
+
+#include "Engine/Scene/Components.hpp"
+#include "Engine/Scene/Entity.hpp"
+#include "Engine/Scene/Scene.hpp"
 
 #include <GLFW/glfw3.h>
 
@@ -11,38 +13,36 @@
 #include <cmath>
 #include <memory>
 #include <random>
-#include <string>
-#include <vector>
 
-struct Vec2
+struct BulletComponent
 {
-    float x = 0.0f;
-    float y = 0.0f;
-};
-
-struct Bullet
-{
-    Vec2 position;
-    Vec2 velocity;
-    Vec2 size;
     bool alive = true;
 };
 
-struct Enemy
+struct EnemyComponent
 {
-    Vec2 position;
-    Vec2 velocity;
-    Vec2 size;
     bool alive = true;
 };
 
-class TopDownShooterLayer final : public Engine::Layer
+struct PlayerComponent
+{
+};
+
+struct LifetimeComponent
+{
+    float remaining = 5.0f;
+};
+
+class ECSShooterLayer final : public Engine::Layer
 {
 public:
-    TopDownShooterLayer()
-        : Engine::Layer("TopDownShooterLayer"),
-          m_camera(0.0f, WorldWidth, 0.0f, WorldHeight),
+    ECSShooterLayer()
+        : Engine::Layer("ECSShooterLayer"),
           m_rng(std::random_device{}())
+    {
+    }
+
+    void onAttach() override
     {
         reset();
     }
@@ -57,38 +57,30 @@ public:
             return;
         }
 
-        updatePlayer(dt);
+        updatePlayerInput();
         updateShooting(dt);
-        updateBullets(dt);
-        updateEnemies(dt);
         updateSpawning(dt);
+
+        m_scene.onUpdate(dt);
+
+        updateLifetimes(dt);
         handleCollisions();
-        cleanup();
+        cleanupDeadEntities();
     }
 
     void onRender() override
     {
-        Engine::Renderer2D::beginScene(m_camera);
-
-        drawBackground();
-        drawPlayer();
-        drawBullets();
-        drawEnemies();
-        drawHudBars();
-
-        Engine::Renderer2D::endScene();
+        m_scene.onRender();
     }
 
 private:
     static constexpr float WorldWidth = 16.0f;
     static constexpr float WorldHeight = 9.0f;
 
-    Vec2 m_playerPosition{8.0f, 1.0f};
-    Vec2 m_playerSize{0.55f, 0.55f};
-    float m_playerSpeed = 7.0f;
+    Engine::Scene m_scene;
+    Engine::Entity m_player;
 
-    std::vector<Bullet> m_bullets;
-    std::vector<Enemy> m_enemies;
+    std::mt19937 m_rng;
 
     float m_shootCooldown = 0.0f;
     float m_shootInterval = 0.16f;
@@ -100,59 +92,119 @@ private:
     int m_lives = 3;
     bool m_gameOver = false;
 
-    Engine::OrthographicCamera m_camera;
-    std::mt19937 m_rng;
-
 private:
     void reset()
     {
-        m_playerPosition = {WorldWidth * 0.5f, 1.0f};
-        m_bullets.clear();
-        m_enemies.clear();
-
-        m_shootCooldown = 0.0f;
-        m_spawnTimer = 0.0f;
+        m_scene = Engine::Scene{};
 
         m_score = 0;
         m_lives = 3;
         m_gameOver = false;
+        m_shootCooldown = 0.0f;
+        m_spawnTimer = 0.0f;
+
+        createCamera();
+        createBackground();
+        createPlayer();
     }
 
-    void updatePlayer(float dt)
+    void createCamera()
     {
-        Vec2 movement{};
+        auto camera = m_scene.createEntity("Main Camera");
+
+        camera.addComponent<Engine::CameraComponent>(
+            Engine::CameraComponent{
+                .primary = true,
+                .left = 0.0f,
+                .right = WorldWidth,
+                .bottom = 0.0f,
+                .top = WorldHeight
+            }
+        );
+    }
+
+    void createBackground()
+    {
+        auto background = m_scene.createEntity("Background");
+
+        auto& transform = background.getComponent<Engine::TransformComponent>();
+        transform.x = WorldWidth * 0.5f;
+        transform.y = WorldHeight * 0.5f;
+        transform.scaleX = WorldWidth;
+        transform.scaleY = WorldHeight;
+
+        background.addComponent<Engine::SpriteComponent>(
+            Engine::SpriteComponent{
+                .r = 0.02f,
+                .g = 0.02f,
+                .b = 0.035f,
+                .a = 1.0f
+            }
+        );
+    }
+
+    void createPlayer()
+    {
+        m_player = m_scene.createEntity("Player");
+
+        auto& transform = m_player.getComponent<Engine::TransformComponent>();
+        transform.x = WorldWidth * 0.5f;
+        transform.y = 1.0f;
+        transform.scaleX = 0.55f;
+        transform.scaleY = 0.55f;
+
+        m_player.addComponent<PlayerComponent>();
+
+        m_player.addComponent<Engine::SpriteComponent>(
+            Engine::SpriteComponent{
+                .r = 0.2f,
+                .g = 0.8f,
+                .b = 1.0f,
+                .a = 1.0f
+            }
+        );
+
+        m_player.addComponent<Engine::RigidBodyComponent>();
+    }
+
+    void updatePlayerInput()
+    {
+        auto& transform = m_player.getComponent<Engine::TransformComponent>();
+        auto& rb = m_player.getComponent<Engine::RigidBodyComponent>();
+
+        rb.velocityX = 0.0f;
+        rb.velocityY = 0.0f;
+
+        constexpr float speed = 7.0f;
 
         if (Engine::Input::isKeyPressed(GLFW_KEY_A) ||
             Engine::Input::isKeyPressed(GLFW_KEY_LEFT))
-            movement.x -= 1.0f;
+            rb.velocityX -= speed;
 
         if (Engine::Input::isKeyPressed(GLFW_KEY_D) ||
             Engine::Input::isKeyPressed(GLFW_KEY_RIGHT))
-            movement.x += 1.0f;
+            rb.velocityX += speed;
 
         if (Engine::Input::isKeyPressed(GLFW_KEY_W) ||
             Engine::Input::isKeyPressed(GLFW_KEY_UP))
-            movement.y += 1.0f;
+            rb.velocityY += speed;
 
         if (Engine::Input::isKeyPressed(GLFW_KEY_S) ||
             Engine::Input::isKeyPressed(GLFW_KEY_DOWN))
-            movement.y -= 1.0f;
+            rb.velocityY -= speed;
 
-        normalizeIfNeeded(movement);
+        normalizeVelocity(rb);
 
-        m_playerPosition.x += movement.x * m_playerSpeed * dt;
-        m_playerPosition.y += movement.y * m_playerSpeed * dt;
-
-        m_playerPosition.x = std::clamp(
-            m_playerPosition.x,
-            m_playerSize.x * 0.5f,
-            WorldWidth - m_playerSize.x * 0.5f
+        transform.x = std::clamp(
+            transform.x,
+            transform.scaleX * 0.5f,
+            WorldWidth - transform.scaleX * 0.5f
         );
 
-        m_playerPosition.y = std::clamp(
-            m_playerPosition.y,
-            m_playerSize.y * 0.5f,
-            WorldHeight - m_playerSize.y * 0.5f
+        transform.y = std::clamp(
+            transform.y,
+            transform.scaleY * 0.5f,
+            WorldHeight - transform.scaleY * 0.5f
         );
     }
 
@@ -167,40 +219,37 @@ private:
         if (!shoot || m_shootCooldown > 0.0f)
             return;
 
-        Bullet bullet;
-        bullet.position = {m_playerPosition.x, m_playerPosition.y + 0.45f};
-        bullet.velocity = {0.0f, 12.0f};
-        bullet.size = {0.12f, 0.35f};
+        const auto& playerTransform =
+            m_player.getComponent<Engine::TransformComponent>();
 
-        m_bullets.push_back(bullet);
-        m_shootCooldown = m_shootInterval;
-    }
+        auto bullet = m_scene.createEntity("Bullet");
 
-    void updateBullets(float dt)
-    {
-        for (auto& bullet : m_bullets)
-        {
-            bullet.position.x += bullet.velocity.x * dt;
-            bullet.position.y += bullet.velocity.y * dt;
+        auto& transform = bullet.getComponent<Engine::TransformComponent>();
+        transform.x = playerTransform.x;
+        transform.y = playerTransform.y + 0.45f;
+        transform.scaleX = 0.12f;
+        transform.scaleY = 0.35f;
 
-            if (bullet.position.y > WorldHeight + 1.0f)
-                bullet.alive = false;
-        }
-    }
+        bullet.addComponent<BulletComponent>();
+        bullet.addComponent<LifetimeComponent>(LifetimeComponent{2.0f});
 
-    void updateEnemies(float dt)
-    {
-        for (auto& enemy : m_enemies)
-        {
-            enemy.position.x += enemy.velocity.x * dt;
-            enemy.position.y += enemy.velocity.y * dt;
-
-            if (enemy.position.y < -1.0f)
-            {
-                enemy.alive = false;
-                loseLife();
+        bullet.addComponent<Engine::SpriteComponent>(
+            Engine::SpriteComponent{
+                .r = 1.0f,
+                .g = 0.95f,
+                .b = 0.25f,
+                .a = 1.0f
             }
-        }
+        );
+
+        bullet.addComponent<Engine::RigidBodyComponent>(
+            Engine::RigidBodyComponent{
+                .velocityX = 0.0f,
+                .velocityY = 12.0f
+            }
+        );
+
+        m_shootCooldown = m_shootInterval;
     }
 
     void updateSpawning(float dt)
@@ -225,28 +274,96 @@ private:
 
         const float size = sizeDist(m_rng);
 
-        Enemy enemy;
-        enemy.position = {xDist(m_rng), WorldHeight + 0.6f};
-        enemy.velocity = {driftDist(m_rng), -speedDist(m_rng)};
-        enemy.size = {size, size};
-        enemy.alive = true;
+        auto enemy = m_scene.createEntity("Enemy");
 
-        m_enemies.push_back(enemy);
+        auto& transform = enemy.getComponent<Engine::TransformComponent>();
+        transform.x = xDist(m_rng);
+        transform.y = WorldHeight + 0.6f;
+        transform.scaleX = size;
+        transform.scaleY = size;
+
+        enemy.addComponent<EnemyComponent>();
+        enemy.addComponent<LifetimeComponent>(LifetimeComponent{8.0f});
+
+        enemy.addComponent<Engine::SpriteComponent>(
+            Engine::SpriteComponent{
+                .r = 1.0f,
+                .g = 0.2f,
+                .b = 0.25f,
+                .a = 1.0f
+            }
+        );
+
+        enemy.addComponent<Engine::RigidBodyComponent>(
+            Engine::RigidBodyComponent{
+                .velocityX = driftDist(m_rng),
+                .velocityY = -speedDist(m_rng)
+            }
+        );
+    }
+
+    void updateLifetimes(float dt)
+    {
+        auto view = m_scene.registry().view<
+            Engine::TransformComponent,
+            LifetimeComponent
+        >();
+
+        for (auto entityHandle : view)
+        {
+            auto& transform = view.get<Engine::TransformComponent>(entityHandle);
+            auto& lifetime = view.get<LifetimeComponent>(entityHandle);
+
+            lifetime.remaining -= dt;
+
+            if (transform.y > WorldHeight + 2.0f ||
+                transform.y < -2.0f ||
+                lifetime.remaining <= 0.0f)
+            {
+                markDead(entityHandle);
+
+                if (m_scene.registry().all_of<EnemyComponent>(entityHandle) &&
+                    transform.y < -1.0f)
+                {
+                    loseLife();
+                }
+            }
+        }
     }
 
     void handleCollisions()
     {
-        for (auto& bullet : m_bullets)
+        auto bulletView = m_scene.registry().view<
+            Engine::TransformComponent,
+            BulletComponent
+        >();
+
+        auto enemyView = m_scene.registry().view<
+            Engine::TransformComponent,
+            EnemyComponent
+        >();
+
+        for (auto bulletHandle : bulletView)
         {
+            auto& bullet = bulletView.get<BulletComponent>(bulletHandle);
+
             if (!bullet.alive)
                 continue;
 
-            for (auto& enemy : m_enemies)
+            const auto& bulletTransform =
+                bulletView.get<Engine::TransformComponent>(bulletHandle);
+
+            for (auto enemyHandle : enemyView)
             {
+                auto& enemy = enemyView.get<EnemyComponent>(enemyHandle);
+
                 if (!enemy.alive)
                     continue;
 
-                if (intersects(bullet.position, bullet.size, enemy.position, enemy.size))
+                const auto& enemyTransform =
+                    enemyView.get<Engine::TransformComponent>(enemyHandle);
+
+                if (intersects(bulletTransform, enemyTransform))
                 {
                     bullet.alive = false;
                     enemy.alive = false;
@@ -256,12 +373,20 @@ private:
             }
         }
 
-        for (auto& enemy : m_enemies)
+        auto& playerTransform =
+            m_player.getComponent<Engine::TransformComponent>();
+
+        for (auto enemyHandle : enemyView)
         {
+            auto& enemy = enemyView.get<EnemyComponent>(enemyHandle);
+
             if (!enemy.alive)
                 continue;
 
-            if (intersects(m_playerPosition, m_playerSize, enemy.position, enemy.size))
+            const auto& enemyTransform =
+                enemyView.get<Engine::TransformComponent>(enemyHandle);
+
+            if (intersects(playerTransform, enemyTransform))
             {
                 enemy.alive = false;
                 loseLife();
@@ -269,31 +394,30 @@ private:
         }
     }
 
-    void cleanup()
+    void cleanupDeadEntities()
     {
-        m_bullets.erase(
-            std::remove_if(
-                m_bullets.begin(),
-                m_bullets.end(),
-                [](const Bullet& bullet)
-                {
-                    return !bullet.alive;
-                }
-            ),
-            m_bullets.end()
-        );
+        std::vector<entt::entity> toDestroy;
 
-        m_enemies.erase(
-            std::remove_if(
-                m_enemies.begin(),
-                m_enemies.end(),
-                [](const Enemy& enemy)
-                {
-                    return !enemy.alive;
-                }
-            ),
-            m_enemies.end()
-        );
+        auto bulletView = m_scene.registry().view<BulletComponent>();
+
+        for (auto entity : bulletView)
+        {
+            if (!bulletView.get<BulletComponent>(entity).alive)
+                toDestroy.push_back(entity);
+        }
+
+        auto enemyView = m_scene.registry().view<EnemyComponent>();
+
+        for (auto entity : enemyView)
+        {
+            if (!enemyView.get<EnemyComponent>(entity).alive)
+                toDestroy.push_back(entity);
+        }
+
+        for (auto entity : toDestroy)
+        {
+            m_scene.destroyEntity(Engine::Entity{entity, &m_scene});
+        }
     }
 
     void loseLife()
@@ -301,165 +425,68 @@ private:
         m_lives--;
 
         if (m_lives <= 0)
+        {
             m_gameOver = true;
+
+            auto& sprite = m_player.getComponent<Engine::SpriteComponent>();
+            sprite.r = 0.4f;
+            sprite.g = 0.4f;
+            sprite.b = 0.4f;
+        }
     }
 
-    static void normalizeIfNeeded(Vec2& v)
+    static void normalizeVelocity(Engine::RigidBodyComponent& rb)
     {
-        const float length = std::sqrt(v.x * v.x + v.y * v.y);
+        const float length = std::sqrt(
+            rb.velocityX * rb.velocityX +
+            rb.velocityY * rb.velocityY
+        );
 
         if (length > 0.0f)
         {
-            v.x /= length;
-            v.y /= length;
+            constexpr float speed = 7.0f;
+
+            rb.velocityX = (rb.velocityX / length) * speed;
+            rb.velocityY = (rb.velocityY / length) * speed;
         }
     }
 
     static bool intersects(
-        const Vec2& aPosition,
-        const Vec2& aSize,
-        const Vec2& bPosition,
-        const Vec2& bSize
+        const Engine::TransformComponent& a,
+        const Engine::TransformComponent& b
     )
     {
         const bool overlapX =
-            std::abs(aPosition.x - bPosition.x) <=
-            (aSize.x * 0.5f + bSize.x * 0.5f);
+            std::abs(a.x - b.x) <=
+            (a.scaleX * 0.5f + b.scaleX * 0.5f);
 
         const bool overlapY =
-            std::abs(aPosition.y - bPosition.y) <=
-            (aSize.y * 0.5f + bSize.y * 0.5f);
+            std::abs(a.y - b.y) <=
+            (a.scaleY * 0.5f + b.scaleY * 0.5f);
 
         return overlapX && overlapY;
     }
 
-    void drawBackground()
+    void markDead(entt::entity entityHandle)
     {
-        Engine::Renderer2D::drawQuad(
-            WorldWidth * 0.5f,
-            WorldHeight * 0.5f,
-            WorldWidth,
-            WorldHeight,
-            0.02f,
-            0.02f,
-            0.035f,
-            1.0f
-        );
-    }
+        if (m_scene.registry().all_of<BulletComponent>(entityHandle))
+            m_scene.registry().get<BulletComponent>(entityHandle).alive = false;
 
-    void drawPlayer()
-    {
-        const float r = m_gameOver ? 0.4f : 0.2f;
-        const float g = m_gameOver ? 0.4f : 0.8f;
-        const float b = m_gameOver ? 0.4f : 1.0f;
-
-        Engine::Renderer2D::drawQuad(
-            m_playerPosition.x,
-            m_playerPosition.y,
-            m_playerSize.x,
-            m_playerSize.y,
-            r,
-            g,
-            b,
-            1.0f
-        );
-    }
-
-    void drawBullets()
-    {
-        for (const auto& bullet : m_bullets)
-        {
-            Engine::Renderer2D::drawQuad(
-                bullet.position.x,
-                bullet.position.y,
-                bullet.size.x,
-                bullet.size.y,
-                1.0f,
-                0.95f,
-                0.25f,
-                1.0f
-            );
-        }
-    }
-
-    void drawEnemies()
-    {
-        for (const auto& enemy : m_enemies)
-        {
-            Engine::Renderer2D::drawQuad(
-                enemy.position.x,
-                enemy.position.y,
-                enemy.size.x,
-                enemy.size.y,
-                1.0f,
-                0.2f,
-                0.25f,
-                1.0f
-            );
-        }
-    }
-
-    void drawHudBars()
-    {
-        const float lifeWidth = 0.45f;
-        const float lifeHeight = 0.18f;
-
-        for (int i = 0; i < m_lives; ++i)
-        {
-            Engine::Renderer2D::drawQuad(
-                0.45f + static_cast<float>(i) * 0.55f,
-                8.65f,
-                lifeWidth,
-                lifeHeight,
-                0.2f,
-                1.0f,
-                0.3f,
-                1.0f
-            );
-        }
-
-        const int scoreBars = std::min(m_score, 20);
-
-        for (int i = 0; i < scoreBars; ++i)
-        {
-            Engine::Renderer2D::drawQuad(
-                15.5f - static_cast<float>(i) * 0.18f,
-                8.65f,
-                0.12f,
-                0.18f,
-                1.0f,
-                0.8f,
-                0.2f,
-                1.0f
-            );
-        }
-
-        if (m_gameOver)
-        {
-            Engine::Renderer2D::drawQuad(
-                WorldWidth * 0.5f,
-                WorldHeight * 0.5f,
-                5.0f,
-                1.2f,
-                0.7f,
-                0.1f,
-                0.1f,
-                1.0f
-            );
-        }
+        if (m_scene.registry().all_of<EnemyComponent>(entityHandle))
+            m_scene.registry().get<EnemyComponent>(entityHandle).alive = false;
     }
 };
 
 int main()
 {
     Engine::EngineConfig config;
-    config.applicationName = "Top-Down Shooter";
+    config.applicationName = "ECS Top-Down Shooter";
     config.windowWidth = 1280;
     config.windowHeight = 720;
     config.enableVSync = true;
 
     Engine::Application app(config);
-    app.pushLayer(std::make_unique<TopDownShooterLayer>());
+    app.pushLayer(std::make_unique<ECSShooterLayer>());
     app.run();
 
     return 0;
