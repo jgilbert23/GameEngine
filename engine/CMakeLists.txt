@@ -22,6 +22,9 @@ add_library(GameEngine STATIC
     src/Assets/TextureLibrary.cpp
     src/Assets/ShaderLibrary.cpp
 
+    src/Scene/Entity.cpp
+    src/Scene/Scene.cpp
+    
     ${CMAKE_SOURCE_DIR}/external/glad/src/glad.c
 )
 
@@ -34,6 +37,11 @@ target_include_directories(GameEngine
 
 target_link_libraries(GameEngine
     PUBLIC glfw
+)
+
+target_link_libraries(GameEngine
+    PUBLIC glfw
+    EnTT::EnTT
 )
 
 target_compile_definitions(GameEngine

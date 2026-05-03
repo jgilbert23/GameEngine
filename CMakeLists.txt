@@ -10,4 +10,5 @@ option(ENGINE_ENABLE_ASSERTS "Enable engine assertions" ON)
 
 add_subdirectory(external/glfw)
 add_subdirectory(engine)
+add_subdirectory(external/entt)
 add_subdirectory(sandbox)
