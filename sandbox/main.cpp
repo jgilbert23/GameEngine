@@ -10,6 +10,9 @@
 #include "Engine/Renderer/OrthographicCamera.hpp"
 #include "Engine/Renderer/Renderer2D.hpp"
 
+#include "Engine/Audio/Sound.hpp"
+#include "Engine/Audio/Music.hpp"
+
 #include <GLFW/glfw3.h>
 
 #include <algorithm>
@@ -49,6 +52,12 @@ public:
     void onAttach() override
     {
         reset();
+
+        m_laser = std::make_shared<Engine::Sound>("assets/audio/laser.wav");
+        m_music = std::make_shared<Engine::Music>("assets/audio/music.wav");
+
+        m_music->setVolume(0.4f);
+        m_music->play();
         m_scene.onPhysicsStart();
     }
 
@@ -65,6 +74,12 @@ public:
                 reset();
 
             return;
+        }
+
+        if (Engine::Input::isKeyPressed(GLFW_KEY_SPACE) ||
+            Engine::Input::isMouseButtonPressed(GLFW_MOUSE_BUTTON_LEFT))
+        {
+            m_laser->play(0.8f);
         }
 
         updatePlayerInput();
@@ -133,6 +148,8 @@ private:
     int m_score = 0;
     int m_lives = 3;
     bool m_gameOver = false;
+    std::shared_ptr<Engine::Sound> m_laser;
+    std::shared_ptr<Engine::Music> m_music;
 
 private:
     void reset()

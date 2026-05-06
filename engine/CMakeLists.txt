@@ -24,7 +24,11 @@ add_library(GameEngine STATIC
 
     src/Scene/Entity.cpp
     src/Scene/Scene.cpp
-    
+
+    src/Audio/AudioEngine.cpp
+    src/Audio/Sound.cpp
+    src/Audio/Music.cpp
+
     ${CMAKE_SOURCE_DIR}/external/glad/src/glad.c
 )
 
@@ -33,6 +37,7 @@ target_include_directories(GameEngine
         ${CMAKE_CURRENT_SOURCE_DIR}/include
         ${CMAKE_SOURCE_DIR}/external/glad/include
         ${CMAKE_SOURCE_DIR}/external/stb
+        ${CMAKE_SOURCE_DIR}/external/miniaudio
 )
 
 target_link_libraries(GameEngine

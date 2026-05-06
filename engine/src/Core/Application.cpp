@@ -3,6 +3,7 @@
 #include "Engine/Core/Log.hpp"
 #include "Engine/Renderer/RenderCommand.hpp"
 #include "Engine/Renderer/Renderer2D.hpp"
+#include "Engine/Audio/AudioEngine.hpp"
 
 #include <algorithm>
 
@@ -24,6 +25,7 @@ namespace Engine
 
         RenderCommand::init();
         Renderer2D::init();
+        AudioEngine::init();
 
         RenderCommand::setViewport(0, 0, m_config.windowWidth, m_config.windowHeight);
 
@@ -44,6 +46,7 @@ namespace Engine
 
         m_layers.clear();
         Renderer2D::shutdown();
+        AudioEngine::shutdown();
 
         ENGINE_INFO("Application destroyed");
     }
@@ -70,8 +73,9 @@ namespace Engine
             }
 
             update(deltaTime);
-
             render();
+
+            AudioEngine::update();
 
             m_window->swapBuffers();
         }
